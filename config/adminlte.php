@@ -45,8 +45,8 @@ return [
     |
     */
 
-    'logo' => '<b>Admin</b>LTE',
-    'logo_img' => 'vendor/adminlte/dist/img/AdminLTELogo.png',
+    'logo' => '<b>LojaVirtual</b>',
+    'logo_img' => 'img/logo.jpg',
     'logo_img_class' => 'brand-image-xl',
     'logo_img_xl' => null,
     'logo_img_xl_class' => 'brand-image-xs',
@@ -252,7 +252,7 @@ return [
     'plugins' => [
         [
             'name' => 'Datatables',
-            'active' => false,
+            'active' => true,
             'files' => [
                 [
                     'type' => 'js',
@@ -288,7 +288,7 @@ return [
         ],
         [
             'name' => 'Select2',
-            'active' => false,
+            'active' => true,
             'files' => [
                 [
                     'type' => 'js',
@@ -315,12 +315,12 @@ return [
         ],
         [
             'name' => 'Sweetalert2',
-            'active' => false,
+            'active' => true,
             'files' => [
                 [
                     'type' => 'js',
                     'asset' => false,
-                    'location' => '//cdn.jsdelivr.net/npm/sweetalert2@8',
+                    'location' => '//cdn.jsdelivr.net/npm/sweetalert2@9',
                 ],
             ],
         ],
@@ -340,5 +340,16 @@ return [
                 ],
             ],
         ],
+        [
+            'name' => 'axios',
+            'active' => true,
+            'files' =>[
+                [
+                'type' => 'js',
+                'asset' => false,
+                'location' => '//unpkg.com/axios/dist/axios.min.js'
+                ]
+            ]
+        ]
     ],
 ];
