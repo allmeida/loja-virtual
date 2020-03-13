@@ -4,7 +4,6 @@ namespace App\Services;
 
 use App\Models\Categoria;
 use Exception;
-use Illuminate\Support\Facades\Hash;
 
 class CategoriaService
 {
@@ -15,6 +14,56 @@ class CategoriaService
             return [
                 'status' => true,
                 'categoria' => $categoria
+            ];
+        } catch(Exception $err) {
+            return [
+                'status' => false,
+                'erro' => $err->getMessage()
+            ];
+        }
+    }
+
+    public static function getCategoriaPorId($id)
+    {
+        try {
+            $categoria = Categoria::findOrFail($id);
+            return [
+                'status' => true,
+                'categoria' => $categoria
+            ];
+        } catch(Exception $err) {
+            return [
+                'status' => false,
+                'erro' => $err->getMessage()
+            ];
+        }
+    }
+
+    public static function update($request, $id)
+    {
+        try {
+            $categoria = Categoria::findOrFail($id);
+            $categoria->update($request);
+
+            return [
+                'status' => true,
+                'categoria' => $categoria
+            ];
+        } catch(Exception $err) {
+            return [
+                'status' => false,
+                'erro' => $err->getMessage()
+            ];
+        }
+    }
+
+    public static function destroy($id)
+    {
+        try {
+            $user = Categoria::findOrFail($id);
+            $user->delete();
+            return [
+                'status' => true
             ];
         } catch(Exception $err) {
             return [

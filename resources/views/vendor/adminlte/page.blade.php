@@ -193,7 +193,7 @@
         function excluir(rota) {
             Swal.fire({
                 title: 'Atenção',
-                text: "Deseja mesmo exluir?",
+                text: "Deseja mesmo excluir?",
                 showCancelButton: true,
                 confirmButtonColor: '#3085d6',
                 cancelButtonColor: '#d33',
@@ -208,7 +208,7 @@
                             Swal.fire({
                                 icon: 'success',
                                 title: 'Perfeito!',
-                                text: 'Excuido com sucesso'
+                                text: 'Excluido com sucesso'
                             })
                         })
                         .catch(function (err) {
@@ -223,7 +223,7 @@
         }
     </script>
 
-     @if(Session::has('sucesso') || Session::has('falha'))
+    @if(Session::has('sucesso') || Session::has('falha'))
         <script>
             Swal.fire({
                 text: '{{ Session::get('sucesso') ?? Session::get('falha') }}',
