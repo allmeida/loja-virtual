@@ -44,11 +44,9 @@ class ProdutoDataTable extends DataTable
             ->editColumn('preco', function ($produto) {
                 return 'R$ ' . number_format($produto->preco, 2, ',', '.');
             })
-
             ->editColumn('imagem', function ($produto) {
-                return '<img style="height: 50px;" src="' . asset('imagens/' . '" />');
+                return '<img style="height: 50px;" src="' . asset('imagens/' . $produto->imagem) . '" />';
             })
-
             ->rawColumns(['action', 'imagem']);
     }
 

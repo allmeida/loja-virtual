@@ -65,6 +65,7 @@
                 catSelecionadas.push(c);
             @endforeach
         @endisset
+
         $('#select-categorias').select2({
             placeholder: 'Lista de categorias',
             multiple: true,
