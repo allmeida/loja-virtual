@@ -5,7 +5,6 @@
         @foreach ($produtos as $p)
             <div class="col-md-3">
                 <div class="card mt-2">
-                    
                     <a href="{{ route('publico.produto.detalhes', $p->id) }}">
                         <img src="{{ asset('/imagens/' . $p->imagem) }}" class="card-img-top" alt="...">
                     </a>
@@ -15,7 +14,8 @@
 
                         {!! Form::open(['url' => route('publico.carrinho.store')]) !!}
                             {!! Form::hidden('produto', $p->id) !!}
-                            {!! Form::submit('Adicionar ao Carrinho', ['class' => 'btn btn-primary']) !!}
+                            {!! Form::number('quantidade', 1, ['class' => 'form-control text-center mb-1']) !!}
+                            {!! Form::submit('Adicionar ao Carrinho', ['class' => 'btn btn-primary btn-block']) !!}
                         {!! Form::close() !!}
                     </div>
                 </div>
