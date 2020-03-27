@@ -75,7 +75,6 @@ class ProdutoService
             ];
         } catch(Exception $err) {
             DB::rollBack();
-            dd($err->getMessage());
             return [
                 'status' => false,
                 'erro' => $err->getMessage()
